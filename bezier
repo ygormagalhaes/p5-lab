@@ -1,0 +1,19 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(0);
+  text(frameCount, 10, 20);
+  createCurves();
+}
+
+function createCurves() {
+  strokeWeight(1);
+  fill(color(255, 75));
+  for(let i=0; i<30; i++) {
+    let innerPoint1 = {x: random(0, width), y: random(0,height)};
+    let innerPoint2 = {x: random(0, width), y: random(0,height)};
+    bezier(0, height, innerPoint1.x, innerPoint1.y, innerPoint2.x, innerPoint2.y, width, height);
+  }
+}
